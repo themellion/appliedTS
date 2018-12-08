@@ -1,4 +1,4 @@
-name: "cars"
+name: "Time-series"
 output_dir: "docs"
 navbar:
   title: "Time-series"
@@ -7,6 +7,14 @@ navbar:
     href: index.html
   - text: "Introduction"
     href: inroduction.html
+  - text: "Linear Regression Model"
+    href: linearmodel.html
+  - text: "Exponential Smoothing"
+    href: expsmoothing.html
+  - text: "ARIMA"
+    href: arima.html
+  - text: "Forecasting"
+    href: forecasting.html
 output:
   html_document:
 theme: cosmo

@@ -1,0 +1,13 @@
+---
+title: "Time-series: A primer"
+---
+
+## Time-series
+A time-series is a chronological sequence of observations on a particular variable. For example the data below is a time-series which gives the quarterly total value of time deposits held by the Baarth National Bank during 1977 and 1978.
+
+```{r echo = FALSE, results = 'asis'}
+library('knitr')
+deposits <- data.frame('Quarter' = c('1977Q1','1977Q2','1977Q3','1977Q4','1978Q1','1978Q2','1978Q3','1978Q4'), 'Value' = c(35.3, 37.6, 38.1, 39.5, 37.9, 39.9, 40.1, 41.2))
+
+knitr::kable(deposits, caption = 'Time Series Data: Quarterly Values of Time-Deposits') 
+```
