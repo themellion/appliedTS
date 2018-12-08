@@ -1,5 +1,5 @@
 ---
-title: "expsmoothing"
+title: "Exponential Smoothing"
 ---
 
 ```
@@ -7,20 +7,9 @@ title: "expsmoothing"
 
 ## Exponential smoothing
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Exponential smoothing is a forecasting method that weights each of the observed values of the time-series unequally, with more recent observations being weighted more heavily than more remote observations. 
+Exponential smoothing is computationally easy and requires little storage of previously observed vales of the time-series. The unequal weighting of the previously observed values of the time-series is accomplished through one or more smoothing constants which determine how much weight is given to each obsrvation. In addition, exponential smoothing provides ways for checking whether the forecasts are "reasonably accurate" and for correcting the forecasting equations if the need arises - often by changing the smoothing constant(s). 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
