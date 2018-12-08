@@ -1,0 +1,29 @@
+---
+title: "Applied time-series: A primer"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## A few words
+
+This is a very basic introduction into applied time-series using R, based on material coming from "Forecasting & time-series: An applied approach" by Bowerman & O'Connell. Topics that will be covered among others are: simple linear regression, exponential smoothing, ARIMA models, etc. A case study for analysing time series and applying forecasting techniques is also introduced. 
+
+## Outline
+1. Introduction
+2. Time-series: trend, seasonality and cycles
+2. Linear regression
+3. Exponential smoothing
+4. ARIMA
+5. Case-study
+
+
+
+
