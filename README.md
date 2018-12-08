@@ -1,12 +1,12 @@
-## Welcome to GitHub Pages
+## Time-series: A primer
 
 You can use the [editor on GitHub](https://github.com/themellion/appliedTS/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Introduction
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This is a very basic introduction into applied time-series using R, based on material coming from "Forecasting & time-series: An applied approach" by Bowerman & O'Connell. Topics that will be covered among others are: simple linear regression, exponential smoothing, ARIMA models, etc, while using R.
 
 ```markdown
 Syntax highlighted code block
