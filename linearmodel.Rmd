@@ -1,19 +1,18 @@
 ---
-title: "Linear Regression"
+title: "Linear Regression Model"
 ---
 
-## Linear Regression
-
-```{r cars}
-summary(cars)
+```
 ```
 
-## An example
+## Linear regression model
 
-You can also embed plots, for example:
+Linear regression model approach is used when 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+LM can be represented as:
+
+$$\sum_{i=1}^n X_i$$
+
+```
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

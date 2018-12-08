@@ -1,0 +1,13 @@
+---
+title: "ARIMA"
+---
+
+```
+```
+
+## ARIMA
+
+Autoregressive Integrated Moving Average models
+
+```
+```
