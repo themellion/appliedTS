@@ -7,7 +7,7 @@ title: "Home"
 
 ## Introduction
 
-This is a very basic introduction into applied time-series with examples from the book of Bowerman and O'Connell, "Forecasting and time-series". This book is a really good introduction in the area of forecasting with the use of time-series data. 
+This is a very basic introduction in applied time-series with examples from the book of Bowerman and O'Connell, "Forecasting and time-series". This book is a really good introduction in the area of forecasting with the use of time-series data. 
 
 The idea is to explain concepts that apepar in the book using R software. We will start with talking about time-series data, their structure and then move to explain time-series components, i.e. trend, seasonality, cycle and irregular fluctuations. We will continue explaining basic linear regression in the context of time-series and then discuss about exponential smoothing. At the next section we will explain ARIMA (or Box-Jenkins methodology) and at the last section we have included a case study of applying all the aforementioned approaches into a real case study. 
 
