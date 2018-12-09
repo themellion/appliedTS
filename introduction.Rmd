@@ -17,4 +17,12 @@ deposits <- data.frame('Quarter' = c('1977Q1','1977Q2','1977Q3','1977Q4','1978Q1
 knitr::kable(deposits, caption = 'Time Series Data: Quarterly Values of Time-Deposits') %>%
   kable_styling(bootstrap_options = "striped", full_width = F)
 # knitr::kable(deposits, caption = 'Time Series Data: Quarterly Values of Time-Deposits') 
+```
+
+Time-series data are often examined in hopes of discovering a historical pattern that can be exploited in the preparation of a forecast. In order to identify this pattern, it is often convenient to think of a time-series as consisting of several components:
+
+* Trend
+* Cycle
+* Seasonal variations
+* Irregular fluctuations
 
