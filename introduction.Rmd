@@ -1,8 +1,5 @@
 ---
-title: "introduction"
-author: "themellion"
-date: "9 December 2018"
-output: html_document
+title: "Introduction: Time-series"
 ---
 
 ```{r setup, include=FALSE}
