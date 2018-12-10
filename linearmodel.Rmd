@@ -16,7 +16,7 @@ Linear regression model approach is used when
 
 LM can be represented as:
 
-$$\sum_{i=1}^n X_i$$
+$$\boxed{\sum_{i=1}^n X_i}$$
 
 ```
 ```
