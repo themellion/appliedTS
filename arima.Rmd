@@ -14,8 +14,14 @@ There are several steps involved in applying the Box-Jenkins apprach. Specifical
 * *forecasting*
 
 The Box-Jenkions approach chooses a particular time-series model to be used from a class of stationary time-series models. Models in this class are either autoregressive models (AR), moving average models (MA), or mixed autoregressive-moving-average models (ARMA). These models are capable of representing both seasonal and non-seasonal time-series. Overall, the Box-Jenkins methodology is capable of accurately forecasting time-series with complicated error structures.  
-The regression and exponential smoothing approaches to forecasting assume that the values of the time-series being forecaste are statistically independent of or not related to each other. If the values of the time-series being forecasted are statistically dependent upon or related to each other, then the Box-Jenkins methodology uses the dependency to produce forecasts that are likely to be more accurate than the forecasts produced by the regression and exponential smoothing approaches. 
+The regression and exponential smoothing approaches to forecasting assume that the values of the time-series being forecaste are statistically independent of or not related to each other. If the values of the time-series being forecasted are statistically dependent upon or related to each other, then the Box-Jenkins methodology uses the dependency to produce forecasts that are likely to be more accurate than the forecasts produced by the regression and exponential smoothing approaches.  
+Regression and exponential smoothing approaches in forecasting, which are presented in the other sections of the course assume that the random error components in the time-series model are statistically independent of each other. 
 
+$ y_t = f(\beta_0, \beta_1, \ldots, \beta_p; t) + \epsilon$
+
+In such a model, if the successive error-terms are statistically independent, then so are the successive observations of the time-series. However, if the successive error terms are statistically dependent upon each other, then so are the successive observations, and we then call the observations *autocorrelated*. It then follows that accurate forecasting of the time-series can probably best be accomplished by employing a model that express $y_t$ as a function of present and prior random error components, 
+
+$ y_t = \mu + \psi_0\epsilon_t+\psi_1\epsilon_{t-1}+\psi_2\epsilon_{t-2}+\ldots$ 
 
 ## ARMA 
 
