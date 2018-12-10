@@ -1,7 +1,10 @@
 ---
 title: "Exponential Smoothing"
 ---
-
+<style>
+body {
+text-align: justify}
+</style>
 ```
 ```
 

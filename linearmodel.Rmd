@@ -2,6 +2,11 @@
 title: "Linear Regression Model"
 ---
 
+<style>
+body {
+text-align: justify}
+</style>
+
 ```
 ```
 

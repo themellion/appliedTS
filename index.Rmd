@@ -1,6 +1,10 @@
 ---
 title: "Home"
 ---
+<style>
+body {
+text-align: justify}
+</style>
 
 ```
 ```
