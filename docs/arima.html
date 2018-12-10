@@ -11,7 +11,7 @@
 
 
 
-<title>ARIMA</title>
+<title>Box-Jenkins</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -308,15 +308,34 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">ARIMA</h1>
+<h1 class="title toc-ignore">Box-Jenkins</h1>
 
 </div>
 
 
 <pre><code></code></pre>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Autoregressive Moving Average (ARMA) and autoregressive Integrated Moving Average (ARIMA) models are part of what is know as the Box-Jenkins methodology which is very useful in forecasting future values of a time-series having values that are statistically dependent upon or related to each other.<br />
+There are several steps involved in applying the Box-Jenkins apprach. Specifically:</p>
+<ul>
+<li><em>identification</em></li>
+<li><em>estimation</em></li>
+<li><em>diagnostic checking</em></li>
+<li><em>forecasting</em></li>
+</ul>
+<p>The Box-Jenkions approach chooses a particular time-series model to be used from a class of stationary time-series models. Models in this class are either autoregressive models (AR), moving average models (MA), or mixed autoregressive-moving-average models (ARMA). These models are capable of representing both seasonal and non-seasonal time-series. Overall, the Box-Jenkins methodology is capable of accurately forecasting time-series with complicated error structures.<br />
+The regression and exponential smoothing approaches to forecasting assume that the values of the time-series being forecaste are statistically independent of or not related to each other. If the values of the time-series being forecasted are statistically dependent upon or related to each other, then the Box-Jenkins methodology uses the dependency to produce forecasts that are likely to be more accurate than the forecasts produced by the regression and exponential smoothing approaches.<br />
+Regression and exponential smoothing approaches in forecasting, which are presented in the other sections of the course assume that the random error components in the time-series model are statistically independent of each other.</p>
+<p>$ y_t = f(_0, _1, , _p; t) + $</p>
+<p>In such a model, if the successive error-terms are statistically independent, then so are the successive observations of the time-series. However, if the successive error terms are statistically dependent upon each other, then so are the successive observations, and we then call the observations <em>autocorrelated</em>. It then follows that accurate forecasting of the time-series can probably best be accomplished by employing a model that express <span class="math inline">\(y_t\)</span> as a function of present and prior random error components,</p>
+<p>$ y_t = + _0_t+<em>1</em>{t-1}+<em>2</em>{t-2}+$</p>
+</div>
+<div id="arma" class="section level2">
+<h2>ARMA</h2>
+</div>
 <div id="arima" class="section level2">
 <h2>ARIMA</h2>
-<p>Autoregressive Integrated Moving Average models</p>
 <pre><code></code></pre>
 </div>
 
