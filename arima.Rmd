@@ -1,11 +1,14 @@
 ---
 title: "Box-Jenkins Methodology"
 ---
+<style>
+body {
+text-align: justify}
+</style>
 
 ```
 ```
 ## Introduction
-\justify
 Autoregressive Moving Average (ARMA) and autoregressive Integrated Moving Average (ARIMA) models are part of what is know as the Box-Jenkins methodology which is very useful in forecasting future values of a time-series having values that are statistically dependent upon or related to each other.  
 There are several steps involved in applying the Box-Jenkins apprach. Specifically:  
 
