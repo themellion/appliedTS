@@ -11,7 +11,7 @@ navbar:
     href: linearmodel.html
   - text: "Exponential Smoothing"
     href: expsmoothing.html
-  - text: "ARIMA"
+  - text: "Box-Jenkins"
     href: arima.html
   - text: "Forecasting"
     href: forecasting.html
