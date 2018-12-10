@@ -43,7 +43,7 @@ If we apply this transformation across the time-series it will appear like below
 
 ```{r echo = FALSE, results = 'asis'}
 library('hwriter')
-mydata <- data.frame('Original Values' = c('$y_1$', '$y_2$'), 'First differences' = c(NA, '$z_2$'))
+mydata <- data.frame('Original Values' = c('$y_1$', '$y_2$', '$y_3$', '.', '.', '.', '$y_{n-1}$', '$y_n$'), 'First differences' = c(NA, '$z_2 = \nabla y_2 = y_2 - y_1$', '$z_3 \nabla y_3 = y_3 - y_2$', '.', '.', '.', '.', '$z_n = $\nabla y_n = y_n - y_{n-1}$'), check.names = FALSE)
 cat(hwrite(mydata, border = 0, center=TRUE, table.frame='void', width='300px', table.style='padding: 50px', row.names=FALSE, row.style=list('font-weight:bold')))
 ```
 
