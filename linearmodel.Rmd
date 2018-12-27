@@ -10,7 +10,8 @@ text-align: justify}
 ```
 ```
 
-## Linear regression model
+
+### Linear regression model
 
 Linear regression model approach is used when 
 
