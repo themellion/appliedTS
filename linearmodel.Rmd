@@ -32,9 +32,18 @@ Assuming ABC can fairly easily determine $x_{t1}$, $x_{t2}$ and $x_{t3}$ for a f
 
 Using the data from the table above we can obtain the 'least-squares' estimates:
 ```{r echo = FALSE}
-demand <- lm(sales$Demand ~ sales$Price + sales$`Average Industry Price` + sales$`Advertising Expenditure`)
+demand <- lm(Demand ~ Price + `Average Industry Price` + `Advertising Expenditure`, data = sales)
 demand$coefficients
 ```
+
+
+that is, $b_0$ = 7.5891025, $b_1$ = -2.3577228, $b_2$ = 1.6122144, and $b_3$ = 0.5011517. These estimates are 'guesses' made on the basis of existing data, for values of the unknown parameters $\beta_0$, $\beta_1$, $\beta_2$, and $\beta_3$ which relate the dependent variable $y_t$ to the independent variables $x_{t1}$, $x_{t2}$ and $x_{t3}$. We call $b_0$, $b_1$, $b_2$, and $b_3$ the least squares estimates of $\beta_0$, $\beta_1$, $\beta_2$, and $\beta_3$ because these estimates give a value of $\sum_{t=1}^{n}{(y_t - \hat{y}_t)^2}$ that is smaller than any other estimates would give. 
+
+Usually we want to know 'how far' $\hat{y}_t$ differ from $y_t$ and the average level, $\mu_t$, when $\epsilon_t$ = 0. In order to obtain this information we need to find the confidence interval for $y_t$ and $\mu_t$. Finding the confidence intervals requires the following conditions to hold:
+
+* for each and every period *t*, the error component $\epsilon_t$ follows a normal probability distribution. 
+* the variance of $y_t$ is the same for each and every value of *t*. 
+* the time-series values $y_1, y_2, \ldots$ in different periods are statistically independent of or not related to each other. 
 
 ```
 ```
