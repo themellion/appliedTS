@@ -22,7 +22,6 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -322,542 +321,82 @@ text-align: justify}
 <div id="multiple-linear-regression-model" class="section level3">
 <h3>Multiple linear regression model</h3>
 <p>In this section we will introduce multiplie linear regression and its use in forecasting problems. Lets assume that company ABC produces a detergent. The company would like to develop a prediction model that can be used to predict the demand for the detergent. The demand for the detergent (in hundreds of thousands of bottles) in “sales period t”, where each sales period is defined to last 4 weeks, is denoted by <span class="math inline">\(y_t\)</span> and is called the <em>dependent variable</em>. The demand for ABC’s detergent is partially determined by one or more of the <em>independent variables</em>, <span class="math inline">\(x_{t1}\)</span> = the price of the detergent in period <em>t</em>, <span class="math inline">\(x_{t2}\)</span> = the average industry price in period <em>t</em> of competitors’ similar detergents, and <span class="math inline">\(x_{t3}\)</span> = the advertising expenditure in period <em>t</em> of ABC to promote the detergent. The data below have been observed in the last 30 sales periods.</p>
-<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>
-Historical data relevant to the demand for ABC detergent
-</caption>
-<thead>
+<center>
+<table style="padding: 50px" width="300px" border="1">
 <tr>
-<th style="text-align:right;">
-t
-</th>
-<th style="text-align:right;">
-Demand
-</th>
-<th style="text-align:right;">
-Price
-</th>
-<th style="text-align:right;">
-Average.Industry.Price
-</th>
-<th style="text-align:right;">
-Advertising.Expenditure
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-1
+<td style="font-weight:bold">
+Original Values
 </td>
-<td style="text-align:right;">
-7.38
-</td>
-<td style="text-align:right;">
-3.85
-</td>
-<td style="text-align:right;">
-3.80
-</td>
-<td style="text-align:right;">
-5.50
+<td style="font-weight:bold">
+First differences
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-2
+<td>
+<span class="math inline">\(y_1\)</span>
 </td>
-<td style="text-align:right;">
-8.31
-</td>
-<td style="text-align:right;">
-3.75
-</td>
-<td style="text-align:right;">
-4.00
-</td>
-<td style="text-align:right;">
-6.75
+<td>
+ 
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-3
+<td>
+<span class="math inline">\(y_2\)</span>
 </td>
-<td style="text-align:right;">
-9.52
-</td>
-<td style="text-align:right;">
-3.70
-</td>
-<td style="text-align:right;">
-4.30
-</td>
-<td style="text-align:right;">
-7.25
+<td>
+<span class="math inline">\(z_2 = \nabla y_2 = y_2 - y_1\)</span>
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-4
+<td>
+<span class="math inline">\(y_3\)</span>
 </td>
-<td style="text-align:right;">
-7.50
-</td>
-<td style="text-align:right;">
-3.70
-</td>
-<td style="text-align:right;">
-3.70
-</td>
-<td style="text-align:right;">
-5.50
+<td>
+<span class="math inline">\(z_3 = \nabla y_3 = y_3 - y_2\)</span>
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-5
+<td>
+.
 </td>
-<td style="text-align:right;">
-9.33
-</td>
-<td style="text-align:right;">
-3.60
-</td>
-<td style="text-align:right;">
-3.85
-</td>
-<td style="text-align:right;">
-7.00
+<td>
+.
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-6
+<td>
+.
 </td>
-<td style="text-align:right;">
-8.28
-</td>
-<td style="text-align:right;">
-3.60
-</td>
-<td style="text-align:right;">
-3.80
-</td>
-<td style="text-align:right;">
-6.50
+<td>
+.
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-7
+<td>
+.
 </td>
-<td style="text-align:right;">
-8.75
-</td>
-<td style="text-align:right;">
-3.60
-</td>
-<td style="text-align:right;">
-3.75
-</td>
-<td style="text-align:right;">
-6.75
+<td>
+.
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-8
+<td>
+<span class="math inline">\(y_{n-1}\)</span>
 </td>
-<td style="text-align:right;">
-7.87
-</td>
-<td style="text-align:right;">
-3.80
-</td>
-<td style="text-align:right;">
-3.85
-</td>
-<td style="text-align:right;">
-5.25
+<td>
+.
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-9
+<td>
+<span class="math inline">\(y_n\)</span>
 </td>
-<td style="text-align:right;">
-7.10
-</td>
-<td style="text-align:right;">
-3.80
-</td>
-<td style="text-align:right;">
-3.65
-</td>
-<td style="text-align:right;">
-5.25
+<td>
+<span class="math inline">\(z_n = \nabla y_n = y_n - y_{n-1}\)</span>
 </td>
 </tr>
-<tr>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-8.00
-</td>
-<td style="text-align:right;">
-3.85
-</td>
-<td style="text-align:right;">
-4.00
-</td>
-<td style="text-align:right;">
-6.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-11
-</td>
-<td style="text-align:right;">
-7.89
-</td>
-<td style="text-align:right;">
-3.90
-</td>
-<td style="text-align:right;">
-4.10
-</td>
-<td style="text-align:right;">
-6.50
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-12
-</td>
-<td style="text-align:right;">
-8.15
-</td>
-<td style="text-align:right;">
-3.90
-</td>
-<td style="text-align:right;">
-4.00
-</td>
-<td style="text-align:right;">
-6.25
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-13
-</td>
-<td style="text-align:right;">
-9.10
-</td>
-<td style="text-align:right;">
-3.70
-</td>
-<td style="text-align:right;">
-4.10
-</td>
-<td style="text-align:right;">
-7.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-14
-</td>
-<td style="text-align:right;">
-8.86
-</td>
-<td style="text-align:right;">
-3.75
-</td>
-<td style="text-align:right;">
-4.20
-</td>
-<td style="text-align:right;">
-6.90
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-15
-</td>
-<td style="text-align:right;">
-8.90
-</td>
-<td style="text-align:right;">
-3.75
-</td>
-<td style="text-align:right;">
-4.10
-</td>
-<td style="text-align:right;">
-6.80
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-16
-</td>
-<td style="text-align:right;">
-8.87
-</td>
-<td style="text-align:right;">
-3.80
-</td>
-<td style="text-align:right;">
-4.10
-</td>
-<td style="text-align:right;">
-6.80
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-17
-</td>
-<td style="text-align:right;">
-9.26
-</td>
-<td style="text-align:right;">
-3.70
-</td>
-<td style="text-align:right;">
-4.20
-</td>
-<td style="text-align:right;">
-7.10
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-18
-</td>
-<td style="text-align:right;">
-9.00
-</td>
-<td style="text-align:right;">
-3.80
-</td>
-<td style="text-align:right;">
-4.30
-</td>
-<td style="text-align:right;">
-7.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-19
-</td>
-<td style="text-align:right;">
-8.75
-</td>
-<td style="text-align:right;">
-3.70
-</td>
-<td style="text-align:right;">
-4.10
-</td>
-<td style="text-align:right;">
-6.80
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-20
-</td>
-<td style="text-align:right;">
-7.95
-</td>
-<td style="text-align:right;">
-3.80
-</td>
-<td style="text-align:right;">
-3.75
-</td>
-<td style="text-align:right;">
-6.50
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:right;">
-7.65
-</td>
-<td style="text-align:right;">
-3.80
-</td>
-<td style="text-align:right;">
-3.75
-</td>
-<td style="text-align:right;">
-6.25
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-22
-</td>
-<td style="text-align:right;">
-7.27
-</td>
-<td style="text-align:right;">
-3.75
-</td>
-<td style="text-align:right;">
-3.65
-</td>
-<td style="text-align:right;">
-6.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-23
-</td>
-<td style="text-align:right;">
-8.00
-</td>
-<td style="text-align:right;">
-3.70
-</td>
-<td style="text-align:right;">
-3.90
-</td>
-<td style="text-align:right;">
-6.50
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-24
-</td>
-<td style="text-align:right;">
-8.50
-</td>
-<td style="text-align:right;">
-3.55
-</td>
-<td style="text-align:right;">
-3.65
-</td>
-<td style="text-align:right;">
-7.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-25
-</td>
-<td style="text-align:right;">
-8.75
-</td>
-<td style="text-align:right;">
-3.60
-</td>
-<td style="text-align:right;">
-4.10
-</td>
-<td style="text-align:right;">
-6.80
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-9.21
-</td>
-<td style="text-align:right;">
-3.65
-</td>
-<td style="text-align:right;">
-4.25
-</td>
-<td style="text-align:right;">
-6.80
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-27
-</td>
-<td style="text-align:right;">
-8.27
-</td>
-<td style="text-align:right;">
-3.70
-</td>
-<td style="text-align:right;">
-3.65
-</td>
-<td style="text-align:right;">
-6.50
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-28
-</td>
-<td style="text-align:right;">
-7.67
-</td>
-<td style="text-align:right;">
-3.75
-</td>
-<td style="text-align:right;">
-3.75
-</td>
-<td style="text-align:right;">
-5.75
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-29
-</td>
-<td style="text-align:right;">
-7.93
-</td>
-<td style="text-align:right;">
-3.80
-</td>
-<td style="text-align:right;">
-3.85
-</td>
-<td style="text-align:right;">
-5.80
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-30
-</td>
-<td style="text-align:right;">
-9.26
-</td>
-<td style="text-align:right;">
-3.70
-</td>
-<td style="text-align:right;">
-4.25
-</td>
-<td style="text-align:right;">
-6.80
-</td>
-</tr>
-</tbody>
 </table>
+</center>
 <pre><code></code></pre>
 </div>
 
