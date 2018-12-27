@@ -8,7 +8,7 @@ text-align: justify}
 ```
 ```
 
-## Exponential smoothing
+### Exponential smoothing
 
 Exponential smoothing is a forecasting method that weights each of the observed values of the time-series unequally, with more recent observations being weighted more heavily than more remote observations. 
 Exponential smoothing is computationally easy and requires little storage of previously observed vales of the time-series. The unequal weighting of the previously observed values of the time-series is accomplished through one or more smoothing constants which determine how much weight is given to each obsrvation. In addition, exponential smoothing provides ways for checking whether the forecasts are "reasonably accurate" and for correcting the forecasting equations if the need arises - often by changing the smoothing constant(s). 
