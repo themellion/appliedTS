@@ -53,7 +53,7 @@ The presence of the *irregular component*, which represents unexplained or unpre
 
 In time-series context there are two types of forecasting performed: (a) *point forecast* and (b) *confidence interval forecast*. A *point forecast* is a number that represents our best prediction of the value of the variable of interest at a given point in time. It is essentially our "best guess" for the future value of the variable being forecast. *Point forecasts* are often in error and as a result a point forecast alone is often not adequate. On the other hand, a *confidence interval forecast* provides an estimate of how wrong a point forecast might be. A confidence interval is an interval or a range of values that is calculated so that we are "quite sure", that the actual value of the variable being forecast will be contained in that interval. If the interval is constructed so that we are 95% sure that the actual value will be in the interval, we call this interva, a "95% confidence interval" and say that the level of confidence is 95%.  
 
-If the actual value of a variable in time period *t* is denoted as $$y_t$$ and the predicted value of $$y_t$$ is denoted as $$\hat{y}_t$$ then we can obtain the forecasrt error $$e_t$$ as:
+If the actual value of a variable in time period *t* is denoted as $y_t$ and the predicted value of $y_t$ is denoted as $\hat{y}_t$ then we can obtain the forecasrt error $e_t$ as:
 
 $$e_t = y_t - \hat{y}_t$$
 
@@ -61,6 +61,6 @@ By examining the forecast errors over time we can tell whether the forecasting t
 
 If the forecasting errors over time indicate that the forecasting methodology is appropriate (random distribution of errors), it is important to measure the mangitude of errors so that we can determine whether accurate forecasting is possible. A few ways have been proposed:
 
-* sum of all forecast errors over time, $$\sum_{t=1}^{n}{(y_t - \hat{y}_t})$$
+* sum of all forecast errors over time, $\sum_{t=1}^{n}{(y_t - \hat{y}_t})$
 * mean absolute deviation, $$ \frac{\sum_{t=1}^{n}{|e_t|}{n} = \frac{\sum_{t=1}^{n}{|y_t| - \hat{y}_t}}{n}$$
 * mean squared error, $$ $$
