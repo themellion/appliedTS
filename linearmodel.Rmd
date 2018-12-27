@@ -31,11 +31,11 @@ Assuming ABC can fairly easily determine $x_{t1}$, $x_{t2}$ and $x_{t3}$ for a f
 
 
 Using the data from the table above we can obtain the 'least-squares' estimates:
-```{r include = FALSE}
+```{r echo = FALSE}
 demand <- lm(sales$Demand ~ sales$Price + sales$`Average Industry Price` + sales$`Advertising Expenditure`)
 demand$coefficients
 ```
-$$ \beta_0 = demand$coefficients[1], \beta_1 = demand$coefficients[2] $$
+
 ```
 ```
 
