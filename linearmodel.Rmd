@@ -22,7 +22,7 @@ sales <- data.frame('t' = 1:30, 'Demand' = c(7.38, 8.51, 9.52, 7.50, 9.33, 8.28,
 
 # cat(hwrite(sales, center=TRUE, width='300px', table.style='padding: 50px', row.names=FALSE, row.style=list('font-weight:bold')))
 
-knitr::kable(deposits, caption = 'Historical data relevant to the demand for ABC detergent') %>%
+knitr::kable(sales, caption = 'Historical data relevant to the demand for ABC detergent') %>%
   kable_styling(bootstrap_options = "striped", full_width = F)
 ```
 
